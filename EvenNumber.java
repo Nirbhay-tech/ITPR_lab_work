@@ -10,15 +10,15 @@ class EvenNumberCalculator
 		numbers = new int[20];
 		
 		//Creating object of Scanner class to initialize elements into the array
-		Scanner sc=new Scanner(System.in);
+		try (Scanner sc = new Scanner(System.in)) {
 		
-		System.out.println("Enter any 20 number : ");
-		for(int index = 0;index < numbers.length;index++)
-		{
-			numbers[index] = sc.nextInt(); //Reading input and storing number at given index in array
+			System.out.println("Enter any 20 number : ");
+			for(int index = 0;index < numbers.length;index++)
+			{
+				numbers[index] = sc.nextInt(); //Reading input and storing number at given index in array
+			}
+			System.out.println("--------------------------------------------");
 		}
-		System.out.println("--------------------------------------------");
-		sc.close();//closing scanner object to avoid resource leak
 	}
 	
 	//method to Display even numbers elements of the array
